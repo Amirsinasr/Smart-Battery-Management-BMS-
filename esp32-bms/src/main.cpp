@@ -49,14 +49,26 @@ float simulatedVoltage = 4.20;
 float simulatedCurrent = 500.0; 
 
 void setup_wifi() {
+  delay(10);
   Serial.print("\nConnecting to Wi-Fi: ");
   Serial.println(ssid);
+  
   WiFi.begin(ssid, password);
 
+  int attempts = 0;
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
+    attempts++;
+    
+    if (attempts > 30) {
+      Serial.println("\nERROR: Wi-Fi connection timed out!");
+      Serial.println("Check your SSID/Password or router distance. Rebooting in 3 seconds...");
+      delay(3000);
+      ESP.restart();
+    }
   }
+  
   Serial.println("\nSUCCESS: Wi-Fi Connected!");
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());
