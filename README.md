@@ -9,7 +9,7 @@ A Full-Stack Internet of Things (IoT) Battery Management System. This project br
 
 ## 📺 Live Demo
 
-![Demo of Dashboard and Hardware]([Insert link to your demo GIF or image here])
+![Demo of Dashboard and Hardware](https://github.com/Amirsinasr/Smart-Battery-Management-BMS-/blob/main/BMS-demo.gif)
 
 ## 🏗️ System Architecture
 
