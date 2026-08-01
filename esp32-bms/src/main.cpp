@@ -20,6 +20,30 @@ public:
         this->lastUpdateTime = millis();
     }
 
+    void update(float current_mA) {
+        unsigned long currentTime = millis();
+        
+        float hoursPassed = (currentTime - lastUpdateTime) / 3600000.0; 
+        
+        float capacityDrained_mAh = current_mA * hoursPassed;
+        
+        float percentageDrained = (capacityDrained_mAh / totalCapacity_mAh) * 100.0;
+        currentSoC_percent -= percentageDrained;
+        
+        if (currentSoC_percent < 0) currentSoC_percent = 0;
+        
+        lastUpdateTime = currentTime;
+    }
+
+    float getPercentage() {
+        return currentSoC_percent;
+    }
+};
+
+CoulombCounter myBattery(2600.0);
+
+float simulatedVoltage = 4.20; 
+float simulatedCurrent = 500.0; 
 
 void setup() {
   Serial.begin(115200);
