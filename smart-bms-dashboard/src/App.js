@@ -53,8 +53,6 @@ function App() {
           Status: {connectionStatus}
         </p>
       </header>
-
-      {/* Top Metric Cards */}
       <div style={{ display: 'flex', gap: '20px', marginBottom: '30px', flexWrap: 'wrap' }}>
         <div style={{ background: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', flex: '1 1 200px' }}>
           <h4 style={{ margin: '0 0 10px 0', color: '#666' }}>Live Voltage</h4>
