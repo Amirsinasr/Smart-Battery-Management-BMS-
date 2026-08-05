@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '30px', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', backgroundColor: '#f0f2f5', minHeight: '100vh' }}>
+    <div style={{ padding: '30px', fontFamily: 'apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', backgroundColor: '#f0f2f5', minHeight: '100vh' }}>
       <header style={{ marginBottom: '20px' }}>
         <h1 style={{ margin: 0, color: '#1a1a1a' }}>Smart BMS IoT Dashboard</h1>
         <p style={{ color: connectionStatus.includes('Live') ? '#2e7d32' : '#d32f2f', fontWeight: 'bold' }}>
