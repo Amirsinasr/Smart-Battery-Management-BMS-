@@ -77,7 +77,6 @@ function App() {
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis dataKey="time" stroke="#666" />
               
-              {/* MAGIC FIX 1: Auto-zoom the Y-Axis and format the decimals */}
               <YAxis 
                 domain={['auto', 'auto']} 
                 tickFormatter={(tick) => tick.toFixed(4)}
@@ -87,7 +86,6 @@ function App() {
               
               <Tooltip />
               
-              {/* MAGIC FIX 2: Turn off the sliding animation so historical points stay still */}
               <Line 
                 type="monotone" 
                 dataKey="soc" 
